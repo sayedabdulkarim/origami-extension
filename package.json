@@ -1,0 +1,125 @@
+{
+  "name": "origami-vscode",
+  "displayName": "Origami - Smart Code Folding",
+  "description": "Fold your code like art. Toggle between folded and expanded views with intelligent file-type detection.",
+  "version": "0.0.1",
+  "publisher": "sayedabdulkarim",
+  "icon": "icon.png",
+  "galleryBanner": {
+    "color": "#1e1e1e",
+    "theme": "dark"
+  },
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Other",
+    "Formatters"
+  ],
+  "keywords": [
+    "fold",
+    "collapse",
+    "toggle",
+    "origami",
+    "code folding",
+    "expand",
+    "minimize"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./extension.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/origami-vscode"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/origami-vscode/issues"
+  },
+  "homepage": "https://github.com/yourusername/origami-vscode#readme",
+  "contributes": {
+    "commands": [
+      {
+        "command": "origami.toggle",
+        "title": "Origami: Toggle Fold/Unfold All",
+        "icon": "$(fold)"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "origami.toggle",
+        "key": "alt+z",
+        "mac": "option+z",
+        "when": "editorTextFocus"
+      }
+    ],
+    "configuration": {
+      "title": "Origami",
+      "properties": {
+        "origami.rememberState": {
+          "type": "boolean",
+          "default": true,
+          "description": "Remember fold state for each file during the session"
+        },
+        "origami.showStatusBar": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show fold/unfold status in the status bar"
+        },
+        "origami.statusBarAlignment": {
+          "type": "string",
+          "default": "right",
+          "enum": ["left", "right"],
+          "description": "Status bar button alignment"
+        },
+        "origami.statusBarPriority": {
+          "type": "number",
+          "default": 100,
+          "description": "Status bar button priority (higher = more to the left)"
+        }
+      }
+    },
+    "menus": {
+      "editor/context": [
+        {
+          "command": "origami.toggle",
+          "group": "1_modification",
+          "when": "editorTextFocus"
+        }
+      ],
+      "editor/title": [
+        {
+          "command": "origami.toggle",
+          "group": "navigation",
+          "when": "editorTextFocus"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "origami.toggle",
+          "when": "editorIsOpen"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "test": "node ./test/runTest.js",
+    "package": "vsce package",
+    "publish": "vsce publish",
+    "vscode:prepublish": "npm run lint"
+  },
+  "devDependencies": {
+    "@types/glob": "^8.0.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@types/vscode": "^1.74.0",
+    "@vscode/test-electron": "^2.2.0",
+    "eslint": "^8.28.0",
+    "glob": "^8.0.3",
+    "mocha": "^10.1.0",
+    "typescript": "^4.9.3",
+    "vsce": "^2.15.0"
+  },
+  "license": "MIT"
+}
