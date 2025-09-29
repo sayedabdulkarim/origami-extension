@@ -31,12 +31,12 @@
   "main": "./extension.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/origami-vscode"
+    "url": "https://github.com/sayedabdulkarim/origami-extension"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/origami-vscode/issues"
+    "url": "https://github.com/sayedabdulkarim/origami-extension/issues"
   },
-  "homepage": "https://github.com/yourusername/origami-vscode#readme",
+  "homepage": "https://github.com/sayedabdulkarim/origami-extension#readme",
   "contributes": {
     "commands": [
       {

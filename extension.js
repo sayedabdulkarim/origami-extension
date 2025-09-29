@@ -147,7 +147,7 @@ class OrigamiExtension {
             } else {
                 console.log('Origami: Unfolding all code...');
                 // Unfold all code
-                await this.unfoldAll(editor);
+                await this.unfoldAll();
                 
                 if (this.config.rememberState) {
                     this.foldStates.set(fileName, 'expanded');
@@ -179,57 +179,57 @@ class OrigamiExtension {
         
         // Apply different folding strategies based on file type
         switch (fileType) {
-            case 'react':
-            case 'javascript':
-            case 'typescript':
-                // For JS/TS files - fold all functions, classes, objects
-                await vscode.commands.executeCommand('editor.foldAll');
-                break;
+        case 'react':
+        case 'javascript':
+        case 'typescript':
+            // For JS/TS files - fold all functions, classes, objects
+            await vscode.commands.executeCommand('editor.foldAll');
+            break;
                 
-            case 'test':
-                // For test files - fold all test blocks
-                await vscode.commands.executeCommand('editor.foldAll');
-                break;
+        case 'test':
+            // For test files - fold all test blocks
+            await vscode.commands.executeCommand('editor.foldAll');
+            break;
                 
-            case 'json':
-                // For JSON - fold to show structure (level 1)
-                await vscode.commands.executeCommand('editor.foldLevel1');
-                break;
+        case 'json':
+            // For JSON - fold to show structure (level 1)
+            await vscode.commands.executeCommand('editor.foldLevel1');
+            break;
                 
-            case 'css':
-            case 'scss':
-            case 'less':
-                // For CSS - fold all rule blocks
-                await vscode.commands.executeCommand('editor.foldAll');
-                break;
+        case 'css':
+        case 'scss':
+        case 'less':
+            // For CSS - fold all rule blocks
+            await vscode.commands.executeCommand('editor.foldAll');
+            break;
                 
-            case 'html':
-            case 'xml':
-                // For HTML/XML - fold to level 2 to show main structure
-                await vscode.commands.executeCommand('editor.foldLevel2');
-                break;
+        case 'html':
+        case 'xml':
+            // For HTML/XML - fold to level 2 to show main structure
+            await vscode.commands.executeCommand('editor.foldLevel2');
+            break;
                 
-            case 'python':
-                // For Python - fold all functions and classes
-                await vscode.commands.executeCommand('editor.foldAll');
-                break;
+        case 'python':
+            // For Python - fold all functions and classes
+            await vscode.commands.executeCommand('editor.foldAll');
+            break;
                 
-            case 'markdown':
-                // For Markdown - fold sections
-                await vscode.commands.executeCommand('editor.foldLevel1');
-                break;
+        case 'markdown':
+            // For Markdown - fold sections
+            await vscode.commands.executeCommand('editor.foldLevel1');
+            break;
                 
-            default:
-                // Generic folding for all other file types
-                await vscode.commands.executeCommand('editor.foldAll');
+        default:
+            // Generic folding for all other file types
+            await vscode.commands.executeCommand('editor.foldAll');
         }
     }
 
     /**
      * Unfold all code blocks
-     * @param {vscode.TextEditor} editor 
+     * @param {vscode.TextEditor} editor
      */
-    async unfoldAll(editor) {
+    async unfoldAll() {
         await vscode.commands.executeCommand('editor.unfoldAll');
     }
 
@@ -259,33 +259,33 @@ class OrigamiExtension {
         
         // Language-specific detection
         switch (languageId) {
-            case 'javascript':
-                return 'javascript';
-            case 'typescript':
-                return 'typescript';
-            case 'json':
-            case 'jsonc':
-                return 'json';
-            case 'css':
-                return 'css';
-            case 'scss':
-            case 'sass':
-                return 'scss';
-            case 'less':
-                return 'less';
-            case 'html':
-                return 'html';
-            case 'xml':
-                return 'xml';
-            case 'python':
-                return 'python';
-            case 'markdown':
-                return 'markdown';
-            case 'yaml':
-            case 'yml':
-                return 'yaml';
-            default:
-                return 'default';
+        case 'javascript':
+            return 'javascript';
+        case 'typescript':
+            return 'typescript';
+        case 'json':
+        case 'jsonc':
+            return 'json';
+        case 'css':
+            return 'css';
+        case 'scss':
+        case 'sass':
+            return 'scss';
+        case 'less':
+            return 'less';
+        case 'html':
+            return 'html';
+        case 'xml':
+            return 'xml';
+        case 'python':
+            return 'python';
+        case 'markdown':
+            return 'markdown';
+        case 'yaml':
+        case 'yml':
+            return 'yaml';
+        default:
+            return 'default';
         }
     }
 
