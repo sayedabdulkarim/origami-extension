@@ -4,6 +4,16 @@ All notable changes to the "Origami" extension will be documented in this file.
 
 ## [Unreleased]
 
+## [0.0.2] - 2024-09-29
+
+### Added
+- Screenshots in README showing before/after folding demonstration
+- Light version of icon for better visibility
+- Images folder with demonstration screenshots
+
+### Fixed
+- Icon visibility in dark theme sidebar
+
 ## [0.0.1] - 2024-09-27
 
 ### Initial Release 🎌

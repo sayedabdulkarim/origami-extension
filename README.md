@@ -2,6 +2,18 @@
 
 > Fold your code like art. A VS Code extension that intelligently toggles code folding with a single command.
 
+## 📸 Screenshots
+
+### Code Expanded
+**Status Bar (bottom-right, marked in green) shows "Expanded"**
+
+![Code Expanded](images/expanded.png)
+
+### Code Folded
+**Status Bar (bottom-right, marked in green) shows "Folded"**
+
+![Code Folded](images/folded.png)
+
 ## ✨ Features
 
 - **🔄 Single Toggle**: One command to fold all / unfold all

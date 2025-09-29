@@ -2,9 +2,9 @@
   "name": "origami-vscode",
   "displayName": "Origami - Smart Code Folding",
   "description": "Fold your code like art. Toggle between folded and expanded views with intelligent file-type detection.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "sayedabdulkarim",
-  "icon": "icon.png",
+  "icon": "icon-light.png",
   "galleryBanner": {
     "color": "#1e1e1e",
     "theme": "dark"
@@ -31,12 +31,13 @@
   "main": "./extension.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sayedabdulkarim/origami-extension"
+    "url": "https://github.com/sayedabdulkarim/origami-extension.git"
   },
   "bugs": {
     "url": "https://github.com/sayedabdulkarim/origami-extension/issues"
   },
   "homepage": "https://github.com/sayedabdulkarim/origami-extension#readme",
+  "readme": "README.md",
   "contributes": {
     "commands": [
       {
